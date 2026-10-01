@@ -126,6 +126,14 @@ Starts an MCP server over stdio exposing read-only suite tools:
 as its server. This is a standalone bridge process, separate from the
 host CLI's own MCP loader which only serves shipped tools.
 
+### `agentia doctor usage`
+
+Shows live AI quota with remaining percent plus every suite command
+that can spend it, each opt-in flag with its agent and trigger. Warns
+below `--warn-pct` (default 20). Per story spend is not exposed by any
+CLI command, so the report pairs live quota with the spend inventory
+honestly instead of inventing numbers.
+
 Statuses: `healthy` (all green), `attention` (warnings only), `blocked`
 (any block). Exit code `0` unless blocked, which exits `1`.
 
