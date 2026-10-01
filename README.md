@@ -134,6 +134,13 @@ below `--warn-pct` (default 20). Per story spend is not exposed by any
 CLI command, so the report pairs live quota with the spend inventory
 honestly instead of inventing numbers.
 
+### `agentia doctor health`
+
+Full hygiene report that never blocks: runtime version, linked plugin
+inventory, skills presence per host target, git tree cleanliness,
+project config presence and stale approval codes. Warnings carry fixes.
+Use before recording so takes start from a known clean state.
+
 Statuses: `healthy` (all green), `attention` (warnings only), `blocked`
 (any block). Exit code `0` unless blocked, which exits `1`.
 
