@@ -118,6 +118,14 @@ Verified live on a real machine:
 | `-s, --story <id>` | Validate flow consistency for this story |
 | `-j, --json` | Machine readable JSON with `status`, `checks`, `fixes` |
 
+### `agentia doctor mcp-serve`
+
+Starts an MCP server over stdio exposing read-only suite tools:
+`doctor_check`, `gov_check`, `vault_diff`, `graph_blast`,
+`release_audit` and `fleet_check`. Point any MCP client at this command
+as its server. This is a standalone bridge process, separate from the
+host CLI's own MCP loader which only serves shipped tools.
+
 Statuses: `healthy` (all green), `attention` (warnings only), `blocked`
 (any block). Exit code `0` unless blocked, which exits `1`.
 
